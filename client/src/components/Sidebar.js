@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { IoChatbubbleEllipses } from "react-icons/io5";
-import { FaUserPlus } from "react-icons/fa";
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { BiLogOut } from "react-icons/bi";
-import Avatar from './Avatar'
-import { useDispatch, useSelector } from 'react-redux';
-import EditUserDetails from './EditUserDetails';
-import Divider from './Divider';
+import { FaUserPlus } from "react-icons/fa";
+import { FaImage, FaVideo } from "react-icons/fa6";
 import { FiArrowUpLeft } from "react-icons/fi";
-import SearchUser from './SearchUser';
-import { FaImage } from "react-icons/fa6";
-import { FaVideo } from "react-icons/fa6";
+import { IoChatbubbleEllipses } from "react-icons/io5";
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { logout } from '../redux/userSlice';
+import Avatar from './Avatar';
+import EditUserDetails from './EditUserDetails';
+import SearchUser from './SearchUser';
 
 const Sidebar = () => {
     const user = useSelector(state => state?.user)
@@ -62,7 +60,7 @@ const Sidebar = () => {
 
     return (
         <div className='w-full h-full grid grid-cols-[48px,1fr] bg-white'>
-            <div className='bg-orange-500 w-12 h-full rounded-tr-lg rounded-br-lg py-5 text-black flex flex-col justify-between'>
+            <div className='bg-slate-200 w-12 h-full rounded-tr-lg rounded-br-lg py-5 text-black flex flex-col justify-between'>
                 <div>
                     <NavLink className={({ isActive }) => `w-12 h-12 flex justify-center items-center cursor-pointer hover:bg-white rounded ${isActive && "bg-white"}`} title='chat'>
                         <IoChatbubbleEllipses
